@@ -1,18 +1,16 @@
-import React from 'react';
-import GreenCircle from '../img/greenCir.png';
-import redCirc from '../img/redCirc.png';
-import grayCirc from '../img/grayCirc.png';
-import LeftPanel from '../Components/LeftPanel.js';
-import Panel from '../Components/Panel.js';
-import './style.scss';
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import PanelChat from './components/PanelChat';
+import './App.css';
 
 function App() {
   return (
     <>
-      <div className="container">
-        <LeftPanel home="" self="" settings="" logout=""></LeftPanel>
-        <Panel></Panel>
-      </div>
+      <Router>
+        <Routes>
+          <Route path="/" element={<PanelChat></PanelChat>}></Route>
+        </Routes>
+      </Router>
     </>
   );
 }

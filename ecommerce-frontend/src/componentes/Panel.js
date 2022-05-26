@@ -1,8 +1,8 @@
 import React from 'react';
-import GreenCircle from '../img/greenCir.png';
-import redCirc from '../img/redCirc.png';
-import grayCirc from '../img/grayCirc.png';
-import '../src/style.scss';
+import GreenCircle from '../imgs/greenCir.png';
+import redCirc from '../imgs/redCirc.png';
+import grayCirc from '../imgs/grayCirc.png';
+import '../styles/PanelChat.scss';
 
 export const Panel = () => {
   return (
