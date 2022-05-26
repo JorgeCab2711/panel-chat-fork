@@ -1,10 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import GreenCircle from '../imgs/greenCir.png';
 import redCirc from '../imgs/redCirc.png';
 import grayCirc from '../imgs/grayCirc.png';
 import '../styles/PanelChat.scss';
 
 export const Panel = () => {
+  // Para encontrar al usuario
+
+  const [user, setUser] = useState();
+
   return (
     <div className="panel-container">
       <div id="generalPanel">
@@ -19,7 +23,18 @@ export const Panel = () => {
             <div>Abandonado</div>
           </div>
           <div className="search-container">
-            <input id="search-bar" placeholder="Search chat by user name..." />
+            <input
+              id="search-bar"
+              placeholder="Search chat by user name..."
+              onKeyPress={(ev) => {
+                if (ev.key === 'Enter') {
+                  ev.preventDefault();
+                  setUser('');
+                  setUser(ev.target.value);
+                  alert(user);
+                }
+              }}
+            />
           </div>
           <div className="chats-container"></div>
         </div>
