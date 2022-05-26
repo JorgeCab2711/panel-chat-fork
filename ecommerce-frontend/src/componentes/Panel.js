@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import GreenCircle from '../imgs/greenCir.png';
 import redCirc from '../imgs/redCirc.png';
 import grayCirc from '../imgs/grayCirc.png';
@@ -11,15 +11,15 @@ export const Panel = () => {
         <div className="items-container">
           <div className="head">
             <h1>Panel de Chats</h1>
-            <img className="circle" src={GreenCircle}></img>
+            <img className="circle" src={GreenCircle} alt="circle"></img>
             <div>Activo</div>
-            <img className="circle" src={redCirc}></img>
+            <img className="circle" src={redCirc} alt="circle"></img>
             <div>Cerrado</div>
-            <img className="circle" src={grayCirc}></img>
+            <img className="circle" src={grayCirc} alt="circle"></img>
             <div>Abandonado</div>
           </div>
           <div className="search-container">
-            <input id="search-bar" placeholder="Search chat..." />
+            <input id="search-bar" placeholder="Search chat by user name..." />
           </div>
           <div className="chats-container"></div>
         </div>
