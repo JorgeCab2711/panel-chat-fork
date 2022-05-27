@@ -6,7 +6,7 @@ import Panel from "../componentes/Panel";
 
 export default function PanelChat() {
 
-  const [activo, setActivo] = useState("")
+  const [activo, setActivo] = useState({})
   return (
     <div className="overAllContainer">
       <LeftPanel home="" self="" settings="" logout=""></LeftPanel>
@@ -17,7 +17,7 @@ export default function PanelChat() {
               <ChatList setActivo={setActivo}/>
             </div>
             <div className="col-sm">
-              <Chat />
+              <Chat activo={activo}/>
             </div>
           </div>
         </div>

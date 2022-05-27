@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 
-export const Chat = () => {
+export const Chat = ({activo}) => {
   const [chats, setChats] = useState(["Hola", "Mensaje Prueba", "UVG"]);
   const [msg, setMsg] = useState("");
+
+  console.log(activo)
 
   const enviarMensaje = () => {
     setChats((prev) => [...prev, msg]);
@@ -17,24 +19,24 @@ export const Chat = () => {
             <div className="col-12">
               <div className="card" id="chat2">
                 <div className="card-header d-flex justify-content-between align-items-center p-3">
-                  <h5 className="mb-0">Nombre Usuario</h5>
+                  <h5 className="mb-0">id: {activo?.id}</h5>
                 </div>
                 <div
                   className="card-body"
                   data-mdb-perfect-scrollbar="true"
-                  style={{ position: "relative", height: "400px" }}
+                  style={{ position: "relative", height: "400px", overflow: 'auto' }}
                 >
-                  {chats.map((chat) => (
+                  {activo.mensajes?.map((msj) => (
                     <div className="d-flex flex-row justify-content-start">
                       <div>
                         <p
                           className="small p-2 ms-3 mb-1 rounded-3"
                           style={{ backgroundColor: "#f5f6f7" }}
                         >
-                          {chat}
+                          {msj.mensaje || ""}
                         </p>
                         <p className="small ms-3 mb-3 rounded-3 text-muted">
-                          Fecha
+                          {msj.enviadoPor || "-"}
                         </p>
                       </div>
                     </div>

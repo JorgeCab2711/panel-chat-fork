@@ -1,25 +1,28 @@
 import React, { useEffect, useState } from "react";
 import api from "./api";
 
-export const ChatList = ({setActivo}) => {
+export const ChatList = ({ setActivo }) => {
   const [chats, setChats] = useState([]);
 
-
-  useEffect(()=> {
+  useEffect(() => {
     const fetchData = async () => {
-      let data = await api.chats.chats()
+      let data = await api.chats.chats();
 
-      setChats(data.chats)
-      
-    }
-    fetchData()
-
-  }, [])
+      setChats(data.chats);
+    };
+    fetchData();
+  }, []);
 
   return (
     <div>
       <section
-        style={{ backgroundColor: "#000", height: "600px", width: "400px", color:'#fff', overflow:'auto' }}
+        style={{
+          backgroundColor: "#000",
+          height: "600px",
+          width: "400px",
+          color: "#fff",
+          overflow: "auto",
+        }}
       >
         <br />
         <div className="container">
@@ -32,13 +35,13 @@ export const ChatList = ({setActivo}) => {
               <div className="">
                 <div className="card-body">
                   <ul className="list-unstyled mb-0">
-                    {chats.map((chat, index) => (
+                    {chats.map((chat) => (
                       <li
                         className="p-2 border-bottom"
-                        style={{ backgroundColor: "#000", cursor: 'pointer' }}
-                        onClick={()=>setActivo(index)}
+                        style={{ backgroundColor: "#000", cursor: "pointer" }}
+                        onClick={() => setActivo(chat)}
                       >
-                        <span  className="d-flex justify-content-between">
+                        <span className="d-flex justify-content-between">
                           <div className="d-flex flex-row">
                             <div className="pt-1">
                               <p className="fw-bold mb-0">{chat.iniciadoPor}</p>
