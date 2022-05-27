@@ -2,6 +2,7 @@
   "name": "prueba",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://cc3e-2800-98-1123-13bd-a001-410a-9163-4be7.ngrok.io/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.2.0",

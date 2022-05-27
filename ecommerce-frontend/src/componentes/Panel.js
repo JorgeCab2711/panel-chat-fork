@@ -1,10 +1,10 @@
-import React, { useState, useRef } from 'react';
-import GreenCircle from '../imgs/greenCir.png';
-import redCirc from '../imgs/redCirc.png';
-import grayCirc from '../imgs/grayCirc.png';
-import '../styles/PanelChat.scss';
+import React, { useState, useRef } from "react";
+import GreenCircle from "../imgs/greenCir.png";
+import redCirc from "../imgs/redCirc.png";
+import grayCirc from "../imgs/grayCirc.png";
+import "../styles/PanelChat.scss";
 
-export const Panel = () => {
+export const Panel = ({ children }) => {
   // Para encontrar al usuario
 
   const [user, setUser] = useState();
@@ -27,16 +27,18 @@ export const Panel = () => {
               id="search-bar"
               placeholder="Search chat by user name..."
               onKeyPress={(ev) => {
-                if (ev.key === 'Enter') {
+                if (ev.key === "Enter") {
                   ev.preventDefault();
-                  setUser('');
+                  setUser("");
                   setUser(ev.target.value);
                   alert(user);
                 }
               }}
             />
           </div>
-          <div className="chats-container"></div>
+          <div className="chats-container">
+            {children}
+          </div>
         </div>
       </div>
     </div>

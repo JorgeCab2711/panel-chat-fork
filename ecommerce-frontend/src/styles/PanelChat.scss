@@ -1,102 +1,98 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap");
 
-$backgroudColorPrimary: #A8A9AD;
-$bluePrim: #5C89BA;
+$backgroudColorPrimary: #a8a9ad;
+$bluePrim: #5c89ba;
 $blackPrim: black;
-$grayPrim: #565D6C;
+$grayPrim: #565d6c;
 $graySec: #838996;
-$grayTh: #A8A9AD;
+$grayTh: #a8a9ad;
 $grayFo: #ffffff;
-$font-nColor:rgb(0, 247, 255);
-$font-nText:'Inconsolata', monospace;
+$font-nColor: rgb(0, 247, 255);
+$font-nText: "Inconsolata", monospace;
 
-html, body {
-    margin: 0;
-    height: 100%;
-    font-family: 'Space Mono', monospace;
-    
+html,
+body {
+  margin: 0;
+  height: 100%;
+  font-family: "Space Mono", monospace;
 }
 
-
-.overAllContainer{
-    width: 100%;
-    height: 100vh;
-    background-color: $backgroudColorPrimary;
-    display: flex;
+.overAllContainer {
+  width: 100%;
+  height: 100vh;
+  background-color: $backgroudColorPrimary;
+  display: flex;
 }
 
-
-.panel-container{
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    display: grid;
-    place-items: center;
+.panel-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
 }
 
-
-#generalPanel{
-    width: 95%;
-    height: 95%;
-    background-color: $grayFo;
-    border-radius: 3%;
-    overflow: hidden;
-    display: grid;
+#generalPanel {
+  width: 95%;
+  height: 95%;
+  background-color: $grayFo;
+  border-radius: 3%;
+  overflow: hidden;
+  display: grid;
 }
 
-.items-container{
-    display: grid;
-    grid-template-rows: 100px 100px 73%;
+.items-container {
+  display: grid;
+  grid-template-rows: 100px 100px 73%;
 }
 
-.head{
-   display: flex;
-   gap: 5%;
-   padding-left: 5%;
-   place-items: center;
+.head {
+  display: flex;
+  gap: 5%;
+  padding-left: 5%;
+  place-items: center;
 }
-.circle{
-    width: 60px;
-    height: 60px;
-    padding: 13px;
-}
-
-
-h1{
-    margin: 0;
-    padding: 10px;
+.circle {
+  width: 60px;
+  height: 60px;
+  padding: 13px;
 }
 
-.chats-container{
-    background-color: $grayTh;
-    border-radius: 10px;
-    place-self: center;
-    width: 90%;
-    height: 90%;
-    overflow: scroll;
-    overflow-x: hidden;
+h1 {
+  margin: 0;
+  padding: 10px;
+}
+
+.chats-container {
+  background-color: $grayTh;
+  border-radius: 10px;
+  place-self: center;
+  width: 90%;
+  height: 90%;
+  overflow: scroll;
+  overflow-x: hidden;
 }
 
 /*Search Bar*/
-.search-container{
-    display: grid;
-    place-items: center;
+.search-container {
+  display: grid;
+  place-items: center;
 }
-#search-bar{
-    align-self: center;
-    justify-self: center;
-    width: 90%;
-    height: 30%;
-    border: black solid 2px;
-    border-radius: 30px;
-    padding: 20px;
-    grid-row-start: 1;
-    overflow: scroll;
-    
-    &::placeholder{
-        color:#A8A9AD;
-        opacity: 1;
-    }
+#search-bar {
+  align-self: center;
+  justify-self: center;
+  width: 90%;
+  height: 30%;
+  border: black solid 2px;
+  border-radius: 30px;
+  padding: 20px;
+  grid-row-start: 1;
+  overflow: scroll;
+
+  &::placeholder {
+    color: #a8a9ad;
+    opacity: 1;
+  }
 }
 
 /*End search bar*/
@@ -104,23 +100,42 @@ h1{
 /*Scroll Bar*/
 /* width */
 ::-webkit-scrollbar {
-    width: 10px;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    border-radius: 10px;
-  }
-   
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: #888; 
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #555; 
-  }
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
 
 /*End scroll bar*/
+
+.panelchat-list {
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+}
+
+.list-container-chat {
+  width: 100%;
+  height: 585px;
+  background-color: #000;
+}
+
+
+
+#chat2 .form-control:focus {
+  border-color: transparent;
+  box-shadow: inset 0px 0px 0px 1px transparent;
+}
