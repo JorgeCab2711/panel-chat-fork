@@ -1,15 +1,19 @@
 import React, { useState } from "react";
+import api from "./api";
 
-export const Chat = ({activo, setActivo}) => {
-  const [msg, setMsg] = useState("");
+export const Chat = ({ activo, setActivo }) => {
+  const [estado, setEstado] = useState("inactivo");
 
-  console.log(activo)
+  console.log(activo);
 
-  const enviarMensaje = () => {
+  const cambiarEstado = async () => {
+    let data = await api.chats.estado({
+      id: activo.id,
+      estado,
+    });
 
-
-    setActivo(prev => ({...prev}))
-
+    alert("Estado actualizado");
+    window.location.reload()
   };
 
   return (
@@ -25,7 +29,11 @@ export const Chat = ({activo, setActivo}) => {
                 <div
                   className="card-body"
                   data-mdb-perfect-scrollbar="true"
-                  style={{ position: "relative", height: "400px", overflow: 'auto' }}
+                  style={{
+                    position: "relative",
+                    height: "400px",
+                    overflow: "auto",
+                  }}
                 >
                   {activo.mensajes?.map((msj) => (
                     <div className="d-flex flex-row justify-content-start">
@@ -44,6 +52,23 @@ export const Chat = ({activo, setActivo}) => {
                   ))}
                 </div>
                 <div className="card-footer text-muted d-flex justify-content-start align-items-center p-3">
+                  <label htmlFor="">Cambiar estado</label>
+                  <select
+                    onChange={(e) => setEstado(e.target.value)}
+                    className="form-control"
+                  >
+                    <option value="inactivo">Inactivo</option>
+                    <option value="espera">Espera</option>
+                    <option value="activos">Activo</option>
+                    <option value="finalizadoss">Finalizado</option>
+                  </select>
+                  <button
+                    onClick={cambiarEstado}
+                    type="button"
+                    class="btn btn-primary"
+                  >
+                    Cambiar
+                  </button>
                 </div>
               </div>
             </div>

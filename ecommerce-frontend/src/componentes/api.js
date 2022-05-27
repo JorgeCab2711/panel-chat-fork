@@ -29,8 +29,8 @@ const api = {
         method: "GET",
       });
     },
-    nuevo(params) {
-      return callApi(`/chats/state`, {
+    estado(params) {
+      return callApi(`api/chats/state`, {
         method: "POST",
         body: JSON.stringify(params),
       });
