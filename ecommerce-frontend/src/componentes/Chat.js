@@ -24,7 +24,8 @@ export const Chat = ({ activo, setActivo }) => {
             <div className="col-12">
               <div className="card" id="chat2">
                 <div className="card-header d-flex justify-content-between align-items-center p-3">
-                  <h5 className="mb-0">id: {activo?.id}</h5>
+                  <h5 className="mb-0">Id: {activo?.id}</h5>
+                  <h3 className="mb-0">Estado: {activo?.estado}</h3>
                 </div>
                 <div
                   className="card-body"
