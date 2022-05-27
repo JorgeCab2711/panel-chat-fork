@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 
-export const Chat = ({activo}) => {
-  const [chats, setChats] = useState(["Hola", "Mensaje Prueba", "UVG"]);
+export const Chat = ({activo, setActivo}) => {
   const [msg, setMsg] = useState("");
 
   console.log(activo)
 
   const enviarMensaje = () => {
-    setChats((prev) => [...prev, msg]);
-    setMsg("");
+
+
+    setActivo(prev => ({...prev}))
+
   };
 
   return (
@@ -43,15 +44,6 @@ export const Chat = ({activo}) => {
                   ))}
                 </div>
                 <div className="card-footer text-muted d-flex justify-content-start align-items-center p-3">
-                  <input
-                    type="text"
-                    className="form-control form-control-lg"
-                    placeholder="Enviar mensaje"
-                    onChange={(e) => setMsg(e.target.value)}
-                  />
-                  <button onClick={enviarMensaje} classNameName="btn">
-                    Enviar
-                  </button>
                 </div>
               </div>
             </div>

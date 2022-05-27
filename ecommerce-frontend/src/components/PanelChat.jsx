@@ -17,7 +17,7 @@ export default function PanelChat() {
               <ChatList setActivo={setActivo}/>
             </div>
             <div className="col-sm">
-              <Chat activo={activo}/>
+              <Chat activo={activo}  setActivo={setActivo}/>
             </div>
           </div>
         </div>
